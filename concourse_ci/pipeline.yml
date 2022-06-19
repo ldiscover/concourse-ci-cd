@@ -2,7 +2,7 @@ resource_types:
   - name: kubectl-resource
     type: docker-image
     source: 
-      repository: jmkarthik/concourse-kubectl-resource
+      repository: robin0695/tutorial
       tag: latest
 
 resources:
@@ -11,6 +11,46 @@ resources:
     source:
       uri: git@github.com:robin0695/concourse-ci-cd.git
       branch: master
+      icon: github
+      private_key: |
+        -----BEGIN OPENSSH PRIVATE KEY-----
+        b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+        NhAAAAAwEAAQAAAYEAmQAzqr3DiB6AaPKWIEi9bODgfw88zBl8x5eQzKiTu7GCzczK3cB6
+        pKRo2/sh1lEeFzQRMQQsvbIL43BEv0X1yTKPoqYvoSGzixQC57ZREuaP0H9g5TpsHWQFcp
+        vi/dDgutPqKijDOglDbnLNXD2eHKNwbMZfUETB0RkIzxi3zF8vk1oUR/sM/OMEF2SPM2Qs
+        b5clRa/dccXBjs0mIWSjAzYRZD4BVGK00IqpgS1f20RbIkFH2BpUAvW5oNuHMRjdBmLzok
+        jv2y0dl8xHSx8kGxg7RddafWijLbY7QEZtKKHAsVEqmoAB2TroW3RXWnk40XmtewEbMGrG
+        opHf/EZj8Z17ft8YPqC2YGbBtVyLNApj6+mhuQjoGOmpocf/PhZdx/Za2Ka3xhF8eF90In
+        LWUlrdz8BSEYjiPIE4zIC8qNcdy4wA9huaH1au5jGLVkurPa9M5cfoj5RrRibPBbzoNq3Y
+        EkrJio5KSsM3BdjkVk2Y5Ha1aLygnrRNGiKbK43dAAAFiDt98Uo7ffFKAAAAB3NzaC1yc2
+        EAAAGBAJkAM6q9w4gegGjyliBIvWzg4H8PPMwZfMeXkMyok7uxgs3Myt3AeqSkaNv7IdZR
+        Hhc0ETEELL2yC+NwRL9F9ckyj6KmL6Ehs4sUAue2URLmj9B/YOU6bB1kBXKb4v3Q4LrT6i
+        oowzoJQ25yzVw9nhyjcGzGX1BEwdEZCM8Yt8xfL5NaFEf7DPzjBBdkjzNkLG+XJUWv3XHF
+        wY7NJiFkowM2EWQ+AVRitNCKqYEtX9tEWyJBR9gaVAL1uaDbhzEY3QZi86JI79stHZfMR0
+        sfJBsYO0XXWn1ooy22O0BGbSihwLFRKpqAAdk66Ft0V1p5ONF5rXsBGzBqxqKR3/xGY/Gd
+        e37fGD6gtmBmwbVcizQKY+vpobkI6BjpqaHH/z4WXcf2Wtimt8YRfHhfdCJy1lJa3c/AUh
+        GI4jyBOMyAvKjXHcuMAPYbmh9WruYxi1ZLqz2vTOXH6I+Ua0YmzwW86Dat2BJKyYqOSkrD
+        NwXY5FZNmOR2tWi8oJ60TRoimyuN3QAAAAMBAAEAAAGAHTZlpwb+a2HvgJo4wcdBq6UwF/
+        Jv2ERRh8ZPllPliSO2ZtbgMQDMKd1eTAoiBsqMJUACvEogxMNW88D+z0prSFQICrUSSQCn
+        SDm06EruJd6xvMxlUr8Z3262f5B2AaI9Fk7Z2dzYkZ8tKcxvm1oEc1FdaNdjYW8PVn4iKX
+        B9v165NbgwQSIU87/gixrfIJ/SwCeqrSiL7mokr8BJtHyDh1xua6ZPGK6T+XFQNeLU94eQ
+        ovS14/P68Gm8XJMtt9kYJsFTdCR41w4I4ga7FTPbJf6LD0A0ZKgl8/YFZYAtlFpI7RmZ7i
+        vhH4TRj+Pu96Bs4ZdixRK3pfqnKg4sTcYa967LAEgNlAiXF+Rz1P7PUf/SeRK6tdDF6rU1
+        cQKo/VxNN5aTcvrOrte8xi8qc93SkrjjOCD6ZGsV3i3K+w2hUPr0ewjNjR/E6FrdXaaB32
+        7l6tlaEuTzlhVcotAqeBSq6srD4BYk+4AzCOo3PAiLEjJcOswt8AGGwJoTLwG7ehv9AAAA
+        wQCEElIHJuwTQehiCHGQqIobaZdY8vS+LyZgpe3iPgBffwN4YcQsEU0bEZPzHKmdZ12iv5
+        CVFCQ/BGvpA0utw8wPIx90k5ILX4lBH9oOBRTSWzi/CSdit6gnkOvayh9raTzJozSeLPx0
+        Mjt8yIQVqcUlFhiMQk6hitnto3nPyCvEi5vXgQ/aSBSyZqvoQ92AVtRHnAt04/IUhTNJUi
+        g/IM4f0XS5Fp2dAzOMpTeAkDeKP5OAV/BVA/7jP5du3DZl+mwAAADBAMvbcBES0DnFcrsm
+        7GHtKLN2Vmae/m0K0Hz2I3Leoe4DN5/8/zSX6XndkSGG5XsxGXW1DA+7YsPuW24DLIS145
+        94Ham7UbVT4/WR5/JrxRu3TNM/exgEdz+OY1G9OY0uU1Q3aE+RtYxK8ByS7bYnOLYExxsh
+        XguG61wzcON5voZVCexwgxTKhyBY09E833/lQpJwKA5AF6r/1Gkf4H33GCNtKbygVEgTIw
+        FELYvUK0XhZ5nBP2fGEVemaKnERlF8kwAAAMEAwCKwZzYQAnvxe/IIPRPHHYmGzpTxUCqK
+        fUbY5s2tOcNGCXt4WRU4m3k5bIMFfapF5wEzkRcuuOnj9Wo3PiYfBgYh7Yu/5+sRTCxROz
+        RH+IycSOb1aiMdKbx90Azb6KaFKnJO6mtfMoEOzhUj+Zkf8StPih/FaQ8dC/g9Xe+5PN+1
+        MFKdsehDddIPMzy8ku6N8yyMa11f8IeFnPRUOcLDtW96Fgnv/7M4STRmicvyo+vTZ00/6D
+        gSzdcBh5IFT8HPAAAAC3JvYmluQHJvYmluAQIDBAUGBw==
+        -----END OPENSSH PRIVATE KEY-----
 
   - name: spring-boot-service-docker-repository
     type: docker-image
