@@ -15,8 +15,8 @@ spec:
         app: spring-boot-app
     spec:
       containers:
-        - name: spring-boot-container
-          image: azmathasan92/hellospringboot:latest
+        - name: spring-boot-container-tutorial
+          image: robin0695/tutorial:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
