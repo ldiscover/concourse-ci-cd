@@ -26,6 +26,7 @@ resources:
     type: kubernetes
     source:
       kubeconfig: ((kubeconfig-file-content))
+
 jobs:
   - name: test
     public: true
@@ -56,6 +57,9 @@ jobs:
       - get: spring-boot-service
         trigger: true
         passed: [package]
+      - put: kubectl
+        params:
+          kubectl: delete -f spring-boot-service/spring-boot-deploy.yaml
       - put: kubectl
         params:
           kubectl: apply -f spring-boot-service/spring-boot-deploy.yaml
