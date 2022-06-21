@@ -22,7 +22,7 @@ resources:
       password: ((docker-hub-password))
       repository: ((docker-hub-username))/((docker-hub-repo-name))
 
-  - name: kubectl
+  - name: kubectl-res
     type: kubernetes
     source:
       kubeconfig: ((kubeconfig-file-content))
@@ -57,9 +57,9 @@ jobs:
       - get: spring-boot-service
         trigger: true
         passed: [package]
-      - put: kubectl
+      - put: kubectl-res
         params:
           kubectl: delete -f spring-boot-service/spring-boot-deploy.yaml
-      - put: kubectl
+      - put: kubectl-res
         params:
           kubectl: apply -f spring-boot-service/spring-boot-deploy.yaml
