@@ -26,6 +26,7 @@ resources:
     type: kubernetes
     source:
       kubeconfig: ((kubeconfig-file-content))
+
 jobs:
   - name: test
     public: true
@@ -36,28 +37,25 @@ jobs:
         config:
           platform: linux
           caches:
-          - path: $HOME/.m2/repository/
-          - path: $HOME/.gradle/caches/
-          - path: $HOME/.gradle/wrapper/
+            - path: $HOME/.m2/repository/
           image_resource:
             type: docker-image
             source:
               repository: maven
               tag: 3.6.0-jdk-8-alpine
-
           inputs:
             - name: spring-boot-service
-
+          
           run:
-            path: "mvn"
+            path: mvn
             args:
-              - -f
-              - spring-boot-service/pom.xml
-              - clean
-              - test
-
+            - -f
+            - spring-boot-service/pom.xml
+            - clean
+            - test
+  
   - name: package
-    plan:
+    plan: 
       - get: spring-boot-service
         trigger: true
         passed: [test]
@@ -65,9 +63,7 @@ jobs:
         config:
           platform: linux
           caches:
-          - path: $HOME/.m2/repository/
-          - path: $HOME/.gradle/caches/
-          - path: $HOME/.gradle/wrapper/
+            - path: $HOME/.m2/repository/
           image_resource:
             type: docker-image
             source:
@@ -76,27 +72,30 @@ jobs:
           inputs:
             - name: spring-boot-service
           run:
-            path: "mvn"
+            path: mvn
             args:
-              - -f
-              - spring-boot-service/pom.xml
-              - clean
-              - package
+            - -f
+            - spring-boot-service/pom.xml
+            - clean
+            - package
+          
           outputs:
             - name: spring-boot-service-out
               path: spring-boot-service
       - put: spring-boot-service-docker-repository
         params:
           build: spring-boot-service-out
-  
+
   - name: deploy
     plan:
       - get: spring-boot-service
         trigger: true
         passed: [package]
+
       - put: kubectl-res
         params:
           kubectl: delete -f spring-boot-service/spring-boot-deploy.yaml
+      
       - put: kubectl-res
         params:
-          kubectl: apply -f spring-boot-service/spring-boot-deploy.yaml          
+          kubectl: apply  -f spring-boot-service/spring-boot-deploy.yaml
