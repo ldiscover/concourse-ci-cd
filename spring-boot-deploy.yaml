@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: spring-boot-container-tutorial
-          image: robin0695/tutorial:latest
+          image: idiscover/ams-poc:latest
           imagePullPolicy: always
           ports:
             - containerPort: 8080
